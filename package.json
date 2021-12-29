@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "build-storybook -c .storybook -o public",
     "preview": "vite preview",
-    "storybook": "start-storybook -p 3000",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook",
+    "build-storybook": "build-storybook -c .storybook -o public"
   },
   "dependencies": {
     "react": "^17.0.2",
