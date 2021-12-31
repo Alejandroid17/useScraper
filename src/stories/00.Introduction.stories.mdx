@@ -2,7 +2,7 @@ import { ArgsTable, Meta, Story } from "@storybook/addon-docs"
 import LeftAccentBorderAlert from "./utils/LeftAccentBorderAlert"
 import PropertyBadge from "./utils/PropertyBadge"
 import ValueTypeBadge from "./utils/ValueTypeBadge"
-import LinkTo from "@storybook/addon-links/react"
+import Link from "./utils/Link"
 
 <Meta title="Documentation/Getting Started" />
 
@@ -71,15 +71,14 @@ export const args = {
   },
   config: {
     description: (
-      <>
-        <span>The config object to pass to the scraper.</span>
-        <LinkTo
+      <span>
+        The config object to pass to the scraper.{" "}
+        <Link
           kind="Documentation/Configuration"
           className="ml-1 text-sky-500 hover:underline"
-        >
-          Read more
-        </LinkTo>.
-      </>
+          label="Read more"
+        />
+      </span>
     ),
     defaultValue: "DefaultConfig",
     example: JSON.stringify({ selectors: { title: { query: "title" } } }),
