@@ -49,6 +49,6 @@ const Template = (args) => {
 export const Basic = Template.bind({})
 
 Basic.args = {
-  url: "https://www.instagram.com/midu.dev/",
-  proxyURL: "http://localhost:3001/api?url=",
+  url: "https://github.com/Alejandroid17",
+  proxyURL: "https://nextjs-proxy-cors.vercel.app/api?url=",
 }
