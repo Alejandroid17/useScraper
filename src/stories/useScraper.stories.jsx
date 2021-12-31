@@ -1,5 +1,5 @@
 import React from "react"
-import useScraper from "../useScraper"
+import useScraper from "./../useScraper"
 import PropertyTable from "./utils/PropertyTable"
 import StateTable from "./utils/StateTable"
 import Title from "./utils/Title"
