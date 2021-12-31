@@ -1,0 +1,146 @@
+import useScraper from "./../useScraper"
+import { ArgsTable, Meta, Story } from "@storybook/addon-docs"
+import LeftAccentBorderAlert from "./utils/LeftAccentBorderAlert"
+import PropertyBadge from "./utils/PropertyBadge"
+import ValueTypeBadge from "./utils/ValueTypeBadge"
+import LinkTo from "@storybook/addon-links/react"
+
+<Meta title="Documentation/Getting Started" />
+
+# Getting Started
+
+<div className="mb-4">
+  <strong className="mr-1">
+    <code>useScraper</code>
+  </strong>
+  is a react component that allows you to scrape a website.
+</div>
+
+## Installation
+
+```javascript
+    npm install --save ....
+```
+
+## Usage
+
+<LeftAccentBorderAlert title="CORS">
+  To use this component it is necessary to define a CORS-enabled proxy. For
+  example you can use
+  <a
+    className="ml-1"
+    href="https://github.com/Rob--W/cors-anywhere"
+    target="_blank"
+  >
+    CORS-Anywhere
+  </a>.
+</LeftAccentBorderAlert>
+
+```jsx
+import useScraper from './../..........';
+
+const MyComponent = () => {
+
+    const { isLoading, data, error } = useScraper({
+        url: 'https://www.google.com',
+        proxyURL: '<proxy-url>'
+    });
+
+    return (
+        // This is an example, here you define your component.
+        <div>
+            { isLoading && <div>Loading...</div> }
+            { error && <div>{error}</div> }
+            { data && <div>{data}</div> }
+        </div>
+    );
+
+```
+
+## Properties
+
+export const args = {
+  url: {
+    description: "The url to scrape.",
+    defaultValue: null,
+    example: "https://www.google.com",
+  },
+  proxyURL: {
+    description: "The proxy url to use.",
+    defaultValue: null,
+    example: "https://cors-anywhere.herokuapp.com/",
+  },
+  config: {
+    description: (
+      <>
+        <span>The config object to pass to the scraper.</span>
+        <LinkTo
+          kind="Documentation/Configuration"
+          className="ml-1 text-sky-500 hover:underline"
+        >
+          Read more
+        </LinkTo>.
+      </>
+    ),
+    defaultValue: "DefaultConfig",
+    example: JSON.stringify({ selectors: { title: { query: "title" } } }),
+  },
+}
+
+<table className="min-w-full divide-y divide-gray-200">
+  <thead className="bg-gray-50">
+    <tr>
+      <th
+        scope="col"
+        className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+      >
+        Argument
+      </th>
+      <th
+        scope="col"
+        className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+      >
+        Description
+      </th>
+      <th
+        scope="col"
+        className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+      >
+        Default
+      </th>
+      <th
+        scope="col"
+        className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
+      >
+        Example
+      </th>
+    </tr>
+  </thead>
+  <tbody className="bg-white divide-y divide-gray-200">
+    {Object.entries(args).map(([key, value]) => (
+      <tr key={key}>
+        <td className="px-6 py-4 whitespace-nowrap">
+          <div className="flex items-center">
+            <PropertyBadge label={key} />
+          </div>
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap">
+          <div className="flex items-center">
+            <ValueTypeBadge value={value.example} />
+            {value.description}
+          </div>
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap">
+          <div className="flex items-center">
+            <PropertyBadge label={value.defaultValue} />
+          </div>
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap">
+          <div className="flex items-center">
+            <PropertyBadge label={value.example} />
+          </div>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
