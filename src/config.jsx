@@ -113,3 +113,9 @@ const DefaultConfig = {
 }
 
 export default DefaultConfig
+export {
+  DEFAULT_SELECTORS,
+  OPEN_GRAPH_SELECTORS,
+  TWITTER_SELECTORS,
+  FACEBOOK_SELECTORS,
+}
