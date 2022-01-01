@@ -2,9 +2,17 @@ import { ArgsTable, Meta, Story } from "@storybook/addon-docs"
 import LeftAccentBorderAlert from "./utils/LeftAccentBorderAlert"
 import PropertyBadge from "./utils/PropertyBadge"
 import ValueTypeBadge from "./utils/ValueTypeBadge"
-import Link from "./utils/Link"
+import { Th, Td, Tr, Table, Thead, Tbody } from "./utils/Table"
+import { ARGUMENTS, STATES } from "./utils/Constants"
 
-<Meta title="Documentation/Getting Started" />
+<Meta
+  title="Documentation/Getting Started"
+  parameters={{
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
 
 # Getting Started
 
@@ -58,87 +66,68 @@ const MyComponent = () => {
 
 ## Properties
 
-export const args = {
-  url: {
-    description: "The url to scrape.",
-    defaultValue: null,
-    example: "https://www.google.com",
-  },
-  proxyURL: {
-    description: "The proxy url to use.",
-    defaultValue: null,
-    example: "https://cors-anywhere.herokuapp.com/",
-  },
-  config: {
-    description: (
-      <span>
-        The config object to pass to the scraper.{" "}
-        <Link
-          kind="Documentation/Configuration"
-          className="ml-1 text-sky-500 hover:underline"
-          label="Read more"
-        />
-      </span>
-    ),
-    defaultValue: "DefaultConfig",
-    example: JSON.stringify({ selectors: { title: { query: "title" } } }),
-  },
-}
+<div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+  <div className="w-full overflow-x-auto">
+    <Table>
+      <Thead>
+        <Tr>
+          <Th>Argument</Th>
+          <Th>Description</Th>
+          <Th>Default</Th>
+          <Th>Example</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        {Object.entries(ARGUMENTS).map(([key, value]) => (
+          <Tr key={key}>
+            <Td>
+              <PropertyBadge label={key} />
+            </Td>
+            <Td>
+              <ValueTypeBadge value={value.example} />
+              {value.description}
+            </Td>
+            <Td>
+              <PropertyBadge label={value.defaultValue} />
+            </Td>
+            <Td>
+              <PropertyBadge label={value.example} />
+            </Td>
+          </Tr>
+        ))}
+      </Tbody>
+    </Table>
+  </div>
+</div>
 
-<table className="min-w-full divide-y divide-gray-200">
-  <thead className="bg-gray-50">
-    <tr>
-      <th
-        scope="col"
-        className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
-      >
-        Argument
-      </th>
-      <th
-        scope="col"
-        className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
-      >
-        Description
-      </th>
-      <th
-        scope="col"
-        className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
-      >
-        Default
-      </th>
-      <th
-        scope="col"
-        className="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase"
-      >
-        Example
-      </th>
-    </tr>
-  </thead>
-  <tbody className="bg-white divide-y divide-gray-200">
-    {Object.entries(args).map(([key, value]) => (
-      <tr key={key}>
-        <td className="px-6 py-4 whitespace-nowrap">
-          <div className="flex items-center">
-            <PropertyBadge label={key} />
-          </div>
-        </td>
-        <td className="px-6 py-4 whitespace-nowrap">
-          <div className="flex items-center">
-            <ValueTypeBadge value={value.example} />
-            {value.description}
-          </div>
-        </td>
-        <td className="px-6 py-4 whitespace-nowrap">
-          <div className="flex items-center">
-            <PropertyBadge label={value.defaultValue} />
-          </div>
-        </td>
-        <td className="px-6 py-4 whitespace-nowrap">
-          <div className="flex items-center">
-            <PropertyBadge label={value.example} />
-          </div>
-        </td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+## States
+
+<div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+  <div className="w-full overflow-x-auto">
+    <Table>
+      <Thead>
+        <Tr>
+          <Th>State</Th>
+          <Th>Description</Th>
+          <Th>Example</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        {Object.entries(STATES).map(([key, value]) => (
+          <Tr key={key}>
+            <Td>
+              <PropertyBadge label={key} />
+            </Td>
+            <Td>
+              <ValueTypeBadge value={value.example} />
+              {value.description}
+            </Td>
+            <Td>
+              <PropertyBadge label={value.example} />
+            </Td>
+          </Tr>
+        ))}
+      </Tbody>
+    </Table>
+  </div>
+</div>
