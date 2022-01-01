@@ -1,8 +1,12 @@
 import React from "react"
 
-const ValueBadge = ({ value }) => {
+const ValueBadge = ({ value, className = "text-white bg-slate-400" }) => {
+  value = typeof value === "object" ? JSON.stringify(value) : value
+
   return (
-    <span className="bg-slate-400 text-white py-1 px-2 mx-1 text-sm rounded leading-none flex items-center">
+    <span
+      className={`flex items-center px-2 py-1 mx-1 text-sm leading-none rounded ${className}`}
+    >
       {String(value)}
     </span>
   )

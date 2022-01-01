@@ -2,6 +2,7 @@ import { ArgsTable, Meta, Story } from "@storybook/addon-docs"
 import LeftAccentBorderAlert from "./utils/LeftAccentBorderAlert"
 import PropertyBadge from "./utils/PropertyBadge"
 import ValueTypeBadge from "./utils/ValueTypeBadge"
+import ValueBadge from "./utils/ValueBadge"
 import { Th, Td, Tr, Table, Thead, Tbody } from "./utils/Table"
 import { ARGUMENTS, STATES } from "./utils/Constants"
 
@@ -123,7 +124,10 @@ const MyComponent = () => {
               {value.description}
             </Td>
             <Td>
-              <PropertyBadge label={value.example} />
+              <ValueBadge
+                value={value.example}
+                className="text-blue-500 bg-slate-100"
+              />
             </Td>
           </Tr>
         ))}
