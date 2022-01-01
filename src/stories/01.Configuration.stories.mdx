@@ -1,4 +1,11 @@
 import { Meta } from "@storybook/addon-docs"
+import {
+  DEFAULT_SELECTORS,
+  OPEN_GRAPH_SELECTORS,
+  TWITTER_SELECTORS,
+  FACEBOOK_SELECTORS,
+} from "./../config"
+import TableSelectors from "./utils/TableSelectors"
 
 <Meta
   title="Documentation/Configuration"
@@ -11,4 +18,117 @@ import { Meta } from "@storybook/addon-docs"
 
 # Configuration
 
-<span className="text-xl">👷 Work in progress</span>
+## Selectors
+
+The **"Selectors"** are configuration options that define the configuration needed to search a value on the web page.
+
+The structure is:
+
+```javascript
+
+<key>: { // <key>: is the name of the selector.
+  query: "<selector>", // query: is the query to search for the value.
+  default: <defaultValue>, // default (optional): is the default value if the query is not found (default: null).
+  attr: "<attrValue>", // attr (optional): is the attribute to search for the value (default: "content").
+  all: <boolean>, // all (optional): indicate if the query must be found on all the elements or only the last one (default: false).
+}
+```
+
+### Selectors in the default configuration
+
+The `use-scraper` configuration (`DefaultConfig`) already has selectors for general use. The default selectors are separeted in `DEFAULT_SELECTORS`, `OPEN_GRAPH_SELECTORS`, `TWITTER_SELECTORS` and `FACEBOOK_SELECTORS`.
+
+#### Default selectors
+
+<div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+  <div className="w-full overflow-x-auto">
+    <TableSelectors selectors={DEFAULT_SELECTORS} />
+  </div>
+</div>
+
+#### Open graph selectors
+
+<div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+  <div className="w-full overflow-x-auto">
+    <TableSelectors selectors={OPEN_GRAPH_SELECTORS} />
+  </div>
+</div>
+
+#### Twitter selectors
+
+<div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+  <div className="w-full overflow-x-auto">
+    <TableSelectors selectors={TWITTER_SELECTORS} />
+  </div>
+</div>
+
+#### Facebook selectors
+
+<div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+  <div className="w-full overflow-x-auto">
+    <TableSelectors selectors={FACEBOOK_SELECTORS} />
+  </div>
+</div>
+
+### Define your own selectors
+
+If you need to define your own selector, you can do it easily.
+
+Define a custom configuration:
+
+```javascript
+const CustomConfig = {
+  selectors: {
+    <key>: { // <key>: is the name of the selector.
+      query: "<selector>", // query: is the query to search for the value.
+      default: <defaultValue>, // default (optional): is the default value if the query is not found (default: null).
+      attr: "<attrValue>", // attr (optional): is the attribute to search for the value (default: "content").
+      all: <boolean>, // all (optional): indicate if the query must be found on all the elements or only the last one (default: false).
+    }
+  },
+}
+
+```
+
+Apply it to your `useScraper` hook:
+
+```javascript
+const { isLoading, data, error } = useScraper({
+  url: "https://github.com/Alejandroid17",
+  proxyURL: "<proxy-url>",
+  config: CustomConfig, // <----- Here
+})
+```
+
+#### Simple example
+
+```javascript
+const CustomConfig = {
+  selectors: {
+    lang: {
+      query: "html",
+      attr: "lang",
+    },
+  },
+}
+
+// data -> {lang: "en"}
+```
+
+#### Example using default selectors
+
+#### Simple example
+
+```javascript
+const CustomConfig = {
+  selectors: {
+    ...DEFAULT_SELECTORS,
+    lang: {
+      query: "html",
+      attr: "lang",
+    },
+  },
+}
+
+// data -> {title: ..., charset: ..., ...DEFAULT SELECTORS, lang: "en"}
+```
