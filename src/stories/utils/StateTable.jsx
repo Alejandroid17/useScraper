@@ -27,7 +27,7 @@ const StateTable = ({ isLoading, data, error, args }) => {
             <PropertyBadge label={"error"} />
           </Td>
           <Td>
-            <ValueBadge value={String(error)} />
+            <ValueBadge value={error} />
           </Td>
         </Tr>
         <Tr>
