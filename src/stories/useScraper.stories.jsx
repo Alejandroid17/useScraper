@@ -26,18 +26,20 @@ const Template = (args) => {
 
   return (
     <div className="flex flex-col">
-      <div className="">
-        <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-          <Title value="Arguments" />
-          <div className="my-4 overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
+      <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+        <Title value="Arguments" />
+        <div className="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+          <div className="w-full overflow-x-auto">
             <PropertyTable args={args} />
           </div>
-          <Title value="States" />
-          <div className="text-xs text-slate-500">
-            You can also see <code>&quot;data&quot;</code> result in the
-            browser&apos;s developer tools console.
-          </div>
-          <div className="my-4 overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
+        </div>
+        <Title value="States" />
+        <div className="text-xs text-slate-500">
+          You can also see <code>&quot;data&quot;</code> result in the
+          browser&apos;s developer tools console.
+        </div>
+        <div className="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
+          <div className="w-full overflow-x-auto">
             <StateTable
               isLoading={isLoading}
               data={data}
