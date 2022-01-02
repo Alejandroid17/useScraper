@@ -21,13 +21,13 @@ import { ARGUMENTS, STATES } from "./utils/Constants"
   <strong className="mr-1">
     <code>useScraper</code>
   </strong>
-  is a react component that allows you to scrape a website.
+  is a react hook that allows you to scrape a website.
 </div>
 
 ## Installation
 
 ```javascript
-    npm install --save ....
+npm i use-scraper
 ```
 
 ## Usage
@@ -45,7 +45,7 @@ import { ARGUMENTS, STATES } from "./utils/Constants"
 </LeftAccentBorderAlert>
 
 ```jsx
-import useScraper from './../..........';
+import useScraper from "use-scraper"
 
 const MyComponent = () => {
 
@@ -62,6 +62,8 @@ const MyComponent = () => {
             { data && <div>{data}</div> }
         </div>
     );
+
+export default MyComponent;
 
 ```
 

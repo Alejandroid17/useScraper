@@ -6,6 +6,7 @@ import {
   FACEBOOK_SELECTORS,
 } from "./../config"
 import TableSelectors from "./utils/TableSelectors"
+import Link from "./utils/Link"
 
 <Meta
   title="Documentation/Configuration"
@@ -34,7 +35,7 @@ The structure is:
 }
 ```
 
-### Selectors in the default configuration
+### Selectors in the default configuration (<Link kind="examples-usescraper--default-configuration" label="Demo"/>)
 
 The `use-scraper` configuration (`DefaultConfig`) already has selectors for general use. The default selectors are separeted in `DEFAULT_SELECTORS`, `OPEN_GRAPH_SELECTORS`, `TWITTER_SELECTORS` and `FACEBOOK_SELECTORS`.
 
@@ -93,6 +94,8 @@ const CustomConfig = {
 Apply it to your `useScraper` hook:
 
 ```javascript
+import useScraper from "use-scraper"
+
 const { isLoading, data, error } = useScraper({
   url: "https://github.com/Alejandroid17",
   proxyURL: "<proxy-url>",
@@ -100,7 +103,7 @@ const { isLoading, data, error } = useScraper({
 })
 ```
 
-#### Simple example
+#### Simple example (<Link kind="examples-usescraper--simple-custom-configuration" label="Demo"/>)
 
 ```javascript
 const CustomConfig = {
@@ -115,9 +118,11 @@ const CustomConfig = {
 // data -> {lang: "en"}
 ```
 
-#### Example using default selectors
+#### Example using default selectors (<Link kind="examples-usescraper--default-and-custom-configuration" label="Demo"/>)
 
 ```javascript
+import { DEFAULT_SELECTORS } from "use-scraper"
+
 const CustomConfig = {
   selectors: {
     ...DEFAULT_SELECTORS,
