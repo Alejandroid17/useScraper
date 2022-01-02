@@ -30,7 +30,8 @@ const useScraper = ({ url, proxyURL, config = DefaultConfig }) => {
     const response = await fetch(url)
 
     if (!response.ok) {
-      setError(response.statusText)
+      const { status, url, type, statusText } = response
+      setError({ status, url, type, statusText })
       setIsLoading(false)
       return
     }
@@ -79,9 +80,6 @@ const useScraper = ({ url, proxyURL, config = DefaultConfig }) => {
 export default useScraper
 
 useScraper.propTypes = {
-  /**
-   * URL to scrape
-   */
   url: PropTypes.string.isRequired,
   proxyURL: PropTypes.string.isRequired,
   config: PropTypes.object,
