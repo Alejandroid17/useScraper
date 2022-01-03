@@ -9,7 +9,7 @@
 
 <div align="center">
 
-![https://use-scraper.vercel.app/](https://img.shields.io/badge/docs-📖-blue?style=flat-square)
+[![Documentation](https://img.shields.io/badge/docs-📖-blue?style=flat-square)](https://use-scraper.vercel.app/)
 ![https://bundlephobia.com/package/use-scraper](https://img.shields.io/bundlephobia/min/use-scraper?style=flat-square)
 ![https://use-scraper.vercel.app/?path=/story/examples](https://img.shields.io/github/package-json/v/Alejandroid17/useScraper?style=flat-square)
 ![https://github.com/Alejandroid17/useScraper/blob/main/LICENSE](https://img.shields.io/github/license/Alejandroid17/useScraper?style=flat-square)
