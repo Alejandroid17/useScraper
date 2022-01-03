@@ -1,42 +1,45 @@
 <div align="center">
     <h1>
-        <br/>
-        <br/>
-        <br/>
+        <br />
         📜
         <br />
         react-scraper
         <br />
-        <br />
     </h1>
-    <sup>
-        <br />
-        <a href="https://use-scraper.vercel.app/">
-            <img src="https://img.shields.io/badge/docs-📖-blue?style=flat-square" alt="documentation" />
-        </a>
-        <a href="https://bundlephobia.com/package/use-scraper">
-            <img src="https://img.shields.io/bundlephobia/min/use-scraper?style=flat-square" alt="npm package" />
-        </a>
-        <a href="https://use-scraper.vercel.app/?path=/story/examples">
-            <img src="https://img.shields.io/github/package-json/v/Alejandroid17/useScraper?style=flat-square" alt="package version" />
-        </a>
-        <a href="https://github.com/Alejandroid17/useScraper/blob/main/LICENSE">
-            <img src="https://img.shields.io/github/license/Alejandroid17/useScraper?style=flat-square" alt="package version" />
-        </a>
-        <a href="https://use-scraper.vercel.app/?path=/story/examples">
-            <img src="https://img.shields.io/badge/demos-🚀-yellow.svg?style=flat-square" alt="demos" />
-        </a>
-        <br />
-    </sup>
+</div>
+
+<div align="center">
+    <br />
+    <a href="https://use-scraper.vercel.app/">
+        <img src="https://img.shields.io/badge/docs-📖-blue?style=flat-square" alt="documentation" />
+    </a>
+    <a href="https://bundlephobia.com/package/use-scraper">
+        <img src="https://img.shields.io/bundlephobia/min/use-scraper?style=flat-square" alt="npm package" />
+    </a>
+    <a href="https://use-scraper.vercel.app/?path=/story/examples">
+        <img src="https://img.shields.io/github/package-json/v/Alejandroid17/useScraper?style=flat-square" alt="package version" />
+    </a>
+    <a href="https://github.com/Alejandroid17/useScraper/blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/Alejandroid17/useScraper?style=flat-square" alt="package version" />
+    </a>
+    <a href="https://use-scraper.vercel.app/?path=/story/examples">
+        <img src="https://img.shields.io/badge/demos-🚀-yellow.svg?style=flat-square" alt="demos" />
+</a>
     <br />
     <br />
-    <h2>
-        <strong>React hook that allows you to scrape a website</strong>
-    </h2>
-    <br />
-    <pre>npm i <a href="https://www.npmjs.com/package/use-scraper">use-scraper</a></pre>
-    <br />
-    <br />
+</div>
+
+ 
+**React hook that allows you to scrape a website**
+
+<br />
+<h3> 
+<a href="https://use-scraper.vercel.app/)">Documentation</a> & <a href="https://use-scraper.vercel.app/?path=/story/examples">demos</a>
+</h3>
+<br />
+<pre>npm i <a href="https://www.npmjs.com/package/use-scraper">use-scraper</a></pre>
+<br />
+<br />
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -49,7 +52,6 @@
         <li><a href="#how-to-use">How to use</a></li>
   </ul>
 </details>
-<br />
 
 
 ## Features
