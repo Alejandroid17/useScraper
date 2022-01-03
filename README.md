@@ -9,42 +9,30 @@
 </div>
 
 <div align="center">
-    <br />
-    <a href="https://use-scraper.vercel.app/">
-        <img src="https://img.shields.io/badge/docs-📖-blue?style=flat-square" alt="documentation" />
-    </a>
-    <a href="https://bundlephobia.com/package/use-scraper">
-        <img src="https://img.shields.io/bundlephobia/min/use-scraper?style=flat-square" alt="npm package" />
-    </a>
-    <a href="https://use-scraper.vercel.app/?path=/story/examples">
-        <img src="https://img.shields.io/github/package-json/v/Alejandroid17/useScraper?style=flat-square" alt="package version" />
-    </a>
-    <a href="https://github.com/Alejandroid17/useScraper/blob/main/LICENSE">
-        <img src="https://img.shields.io/github/license/Alejandroid17/useScraper?style=flat-square" alt="package version" />
-    </a>
-    <a href="https://use-scraper.vercel.app/?path=/story/examples">
-        <img src="https://img.shields.io/badge/demos-🚀-yellow.svg?style=flat-square" alt="demos" />
-</a>
-    <br />
-    <br />
+
+![https://use-scraper.vercel.app/](https://img.shields.io/badge/docs-📖-blue?style=flat-square)
+![https://bundlephobia.com/package/use-scraper](https://img.shields.io/bundlephobia/min/use-scraper?style=flat-square)
+![https://use-scraper.vercel.app/?path=/story/examples](https://img.shields.io/github/package-json/v/Alejandroid17/useScraper?style=flat-square)
+![https://github.com/Alejandroid17/useScraper/blob/main/LICENSE](https://img.shields.io/github/license/Alejandroid17/useScraper?style=flat-square)
+![https://use-scraper.vercel.app/?path=/story/examples](https://img.shields.io/badge/demos-🚀-yellow.svg?style=flat-square)
+
+<br />
 </div>
 
- 
-**React hook that allows you to scrape a website**
-
-<br />
-<h3> 
+<div align="center"> 
+<strong>React hook that allows you to scrape a website</strong>
 <a href="https://use-scraper.vercel.app/)">Documentation</a> & <a href="https://use-scraper.vercel.app/?path=/story/examples">demos</a>
-</h3>
+</div>
+
+<div align="center"> 
 <br />
 <pre>npm i <a href="https://www.npmjs.com/package/use-scraper">use-scraper</a></pre>
-<br />
 <br />
 </div>
 
 <!-- TABLE OF CONTENTS -->
 
-<details>
+<details open>
     <summary>Table of Contents</summary>
     <ul>
         <li><a href="#features">Features</a></li>
