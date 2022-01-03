@@ -2,7 +2,12 @@
   "name": "use-scraper",
   "version": "1.0.0",
   "description": "React hook that allow you to scrape data from a website",
-  "keywords": ["scraper", "react", "hook", "useScraper"],
+  "keywords": [
+    "scraper",
+    "react",
+    "hook",
+    "useScraper"
+  ],
   "homepage": "https://use-scraper.vercel.app/",
   "repository": {
     "type": "git",
