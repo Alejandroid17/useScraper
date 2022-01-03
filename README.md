@@ -50,7 +50,7 @@
 
 ## Installation
 
-```bash
+```shell
 npm i use-scraper
 ```
 
