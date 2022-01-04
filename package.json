@@ -30,9 +30,10 @@
     "dist"
   ],
   "scripts": {
-    "vite:build": "vite build",
+    "vite:build": "vite build && npm run cp:readme",
     "storybook": "start-storybook -p 3000",
-    "storybook:build": "build-storybook -c .storybook -o public"
+    "storybook:build": "build-storybook -c .storybook -o public",
+    "cp:readme": "cp README.md dist/README.md"
   },
   "peerDependencies": {
     "react": ">=17.0.2",
