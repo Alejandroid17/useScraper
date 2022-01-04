@@ -2,7 +2,7 @@
     <h1>
         📜
         <br />
-        react-scraper
+        use-scraper
         <br />
     </h1>
 </div>
