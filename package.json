@@ -35,10 +35,6 @@
     "storybook:build": "build-storybook -c .storybook -o public",
     "cp:readme": "cp README.md dist/README.md"
   },
-  "peerDependencies": {
-    "react": ">=17.0.2",
-    "react-dom": ">=17.0.2"
-  },
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@storybook/addon-actions": "^6.4.9",
@@ -60,6 +56,8 @@
     "postcss-import": "^14.0.2",
     "postcss-nesting": "^10.1.0",
     "prettier": "2.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "storybook-builder-vite": "^0.1.12",
     "tailwindcss": "^3.0.8",
     "vite": "^2.7.2"
