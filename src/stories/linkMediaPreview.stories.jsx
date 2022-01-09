@@ -1,36 +1,36 @@
-import React, { useEffect } from "react"
+import React from "react"
 import useScraper from "../useScraper"
 
 export default {
-  title: "Examples/Use cases",
+  title: "Examples/Use cases/Link media preview",
   component: useScraper,
   parameters: {
     previewTabs: {
-      "storybook/docs/panel": {
+      canvas: {
         hidden: true,
       },
     },
   },
 }
 
-const LinkMediaPreviewConfig = {
-  selectors: {
-    "og:title": {
-      query: 'meta[property="og:title"]',
-    },
-    "og:description": {
-      query: 'meta[property="og:description"]',
-    },
-    "og:image": {
-      query: 'meta[property="og:image"]',
-    },
-    "og:url": {
-      query: 'meta[property="og:url"]',
-    },
-  },
-}
-
 const Template = (args) => {
+  const LinkMediaPreviewConfig = {
+    selectors: {
+      "og:title": {
+        query: 'meta[property="og:title"]',
+      },
+      "og:description": {
+        query: 'meta[property="og:description"]',
+      },
+      "og:image": {
+        query: 'meta[property="og:image"]',
+      },
+      "og:url": {
+        query: 'meta[property="og:url"]',
+      },
+    },
+  }
+
   const { isLoading, data, error } = useScraper({
     ...args,
     config: LinkMediaPreviewConfig,
@@ -39,8 +39,8 @@ const Template = (args) => {
   return error ? (
     <div className="text-red-600">{JSON.stringify(error)}</div>
   ) : (
-    <div className="grid h-screen place-items-center">
-      <a href={data["og:url"]} className="w-1/5 hover:shadow-md">
+    <div className="grid py-5 place-items-center">
+      <a href={data["og:url"]} className="w-96 hover:shadow-md">
         <div className="rounded shadow-lg">
           <img className="w-full" src={data["og:image"]} alt="GitHub" />
           <div className="px-6 py-4">
@@ -54,6 +54,13 @@ const Template = (args) => {
 }
 
 export const LinkMediaPreview = Template.bind({})
+LinkMediaPreview.parameters = {
+  docs: {
+    source: {
+      type: "code",
+    },
+  },
+}
 
 LinkMediaPreview.args = {
   url: "https://github.com/Alejandroid17/useScraper",
