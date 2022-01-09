@@ -22,7 +22,7 @@
 <strong>React hook that allows you to scrape a website</strong>
 <br />
 <br />
-<a href="https://use-scraper.vercel.app/"><strong>Documentation</strong></a> & <a href="https://use-scraper.vercel.app/?path=/story/examples"><strong>demos</strong></a>
+<strong><a href="https://use-scraper.vercel.app/">Documentation</a></strong>, <strong><a href="https://use-scraper.vercel.app/?path=/story/examples">demos</a></strong> & <strong><a href="https://use-scraper.vercel.app/?path=/docs/examples-use-cases">use cases</a></strong>
 </div>
 
 <div align="center"> 
