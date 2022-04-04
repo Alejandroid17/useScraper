@@ -1,5 +1,7 @@
+import DefaultConfig from "./config"
+
 class Scraper {
-  constructor({ url, proxyURL = "", config }) {
+  constructor({ url, proxyURL = "", config = DefaultConfig }) {
     this.url = proxyURL + url
     this.config = config
   }
