@@ -3,7 +3,8 @@ const DEFAULT_SELECTORS = {
   charset: { query: "meta[charset]", attr: "charset" },
   description: {
     query: "meta[name=description]",
-    default: "Empty",
+    attr: "content",
+    default: null,
   },
   keywords: {
     query: "meta[name=keywords]",
