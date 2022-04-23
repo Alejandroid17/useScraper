@@ -4,9 +4,7 @@ import PropTypes from "prop-types"
 import Scraper from "./scraper"
 
 const useScraper = ({ url, proxyURL, config = DefaultConfig }) => {
-  const [isLoading, setIsLoading] = useState(true)
-  const [data, setData] = useState({})
-  const [error, setError] = useState(null)
+  const [data, setData] = useState({ isLoading: true, error: null, data: {} })
 
   useEffect(() => {
     reset()
@@ -14,31 +12,39 @@ const useScraper = ({ url, proxyURL, config = DefaultConfig }) => {
   }, [url, proxyURL])
 
   const reset = () => {
-    setIsLoading(true)
-    setData({})
-    setError(null)
+    setData({ isLoading: true, error: null, data: {} })
   }
 
   const doFetch = async () => {
-    setIsLoading(true)
+    setData((prevState) => ({ ...prevState, isLoading: true }))
 
     const scraper = new Scraper({ url, proxyURL, config })
-    await scraper.parse().then(setData).catch(setError)
-
-    setIsLoading(false)
+    await scraper
+      .parse()
+      .then((response) =>
+        setData({ isLoading: false, data: response, error: null }),
+      )
+      .catch((error) => setData({ isLoading: false, data: {}, error }))
   }
 
   return {
-    isLoading,
-    data,
-    error,
+    ...data,
   }
 }
 
 export default useScraper
 
 useScraper.propTypes = {
+  /**
+   * The url to scrape.
+   */
   url: PropTypes.string.isRequired,
+  /**
+   * The proxy url to use.
+   */
   proxyURL: PropTypes.string.isRequired,
+  /**
+   * The scraper config.
+   */
   config: PropTypes.object,
 }
