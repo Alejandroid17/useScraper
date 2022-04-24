@@ -1,6 +1,6 @@
 {
   "name": "use-scraper",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "React hook that allow you to scrape data from a website",
   "keywords": [
     "scraper",
