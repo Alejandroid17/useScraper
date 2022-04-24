@@ -7,7 +7,7 @@ class Scraper {
   }
 
   async parse() {
-    const htmlText = await this.#fetch()
+    const htmlText = await this.#fetch() // eslint-disable-line no-use-before-define
 
     return this.#parseHTML(htmlText)
   }

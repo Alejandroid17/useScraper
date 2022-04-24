@@ -36,7 +36,8 @@
     "test:coverage": "vitest run --coverage",
     "storybook": "start-storybook -p 3000",
     "storybook:build": "build-storybook -c .storybook -o public",
-    "cp:readme": "cp README.md dist/README.md"
+    "cp:readme": "cp README.md dist/README.md",
+    "eslint": "eslint './**/*.{js,jsx}'"
   },
   "devDependencies": {
     "@babel/core": "7.16.5",
@@ -52,10 +53,11 @@
     "babel-loader": "8.2.3",
     "concurrently": "6.5.1",
     "cross-env": "7.0.3",
-    "eslint": "8.5.0",
-    "eslint-config-prettier": "8.3.0",
-    "eslint-plugin-react": "7.28.0",
+    "eslint": "8.14.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-react": "7.29.4",
     "fetch-mock": "9.11.0",
+    "jsdom": "19.0.0",
     "postcss": "8.4.5",
     "postcss-cli": "9.1.0",
     "postcss-import": "14.0.2",
