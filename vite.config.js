@@ -1,12 +1,12 @@
 import { defineConfig } from "vite"
-import reactRefresh from "@vitejs/plugin-react-refresh"
 import * as path from "path"
 import pkg from "./package.json"
 import camelCase from "camelcase"
+import react from "@vitejs/plugin-react"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [reactRefresh()],
+  plugins: [react()],
   esbuild: {
     jsxInject: "import * as React from 'react';",
   },
