@@ -31,7 +31,7 @@ const Template = (args) => {
     },
   }
 
-  const { isLoading, data, error } = useScraper({
+  const { data, error } = useScraper({
     ...args,
     config: LinkMediaPreviewConfig,
   })

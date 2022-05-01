@@ -36,7 +36,8 @@
     "test:coverage": "vitest run --coverage",
     "storybook": "start-storybook -p 3000",
     "storybook:build": "build-storybook -c .storybook -o public",
-    "cp:readme": "cp README.md dist/README.md"
+    "cp:readme": "cp README.md dist/README.md",
+    "eslint": "eslint './**/*.{js,jsx}'"
   },
   "devDependencies": {
     "@babel/core": "7.17.10",
